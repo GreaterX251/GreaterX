@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreaterX - مكتبة الألعاب</title>
+  <style>
+    :root {
+      --bg-color: #111;
+      --text-color: #fff;
+      --accent-color: #0ff;
+    }
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      text-align: center;
+      padding: 1em;
+    }
+    #title {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .x-anim {
+      display: inline-block;
+      color: var(--accent-color);
+      font-weight: bold;
+      animation: pulse 2s infinite ease-in-out;
+      font-size: 1.2em;
+      transform-origin: center;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.3) rotate(10deg); }
+    }
+    .game-list {
+      padding: 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .game-item {
+      background: #222;
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+    }
+    .controls {
+      text-align: center;
+      margin: 1em;
+    }
+    button {
+      margin: 0 0.5em;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Greater<span class="x-anim">X</span></h1>
+    <div class="controls">
+      <button onclick="toggleTheme()">تغيير الوضع</button>
+      <button onclick="toggleLanguage()">Change Language</button>
+    </div>
+  </header>
+
+  <main class="game-list" id="games">
+    <div class="game-item">
+      <h2>🎮 رواية أشباح السماعة</h2>
+      <p>لعبة رعب نفسـي خفيفة وغامضة تعمل على الأجهزة الضعيفة. استعد لتجربة غريبة تبدأ بجملة: "يُستحسن أن ترتدي السماعة"...</p>
+      <a href="#">تحميل اللعبة (قريبًا)</a>
+    </div>
+  </main>
+
+  <footer>
+    📞 للتواصل: 01508292433 (رسائل SMS فقط)
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      if (root.style.getPropertyValue('--bg-color') === '#111') {
+        root.style.setProperty('--bg-color', '#fff');
+        root.style.setProperty('--text-color', '#000');
+      } else {
+        root.style.setProperty('--bg-color', '#111');
+        root.style.setProperty('--text-color', '#fff');
+      }
+    }
+
+    function toggleLanguage() {
+      alert("تغيير اللغة غير متاح حاليًا.");
+    }
+  </script>
+</body>
+</html>
